@@ -10,7 +10,7 @@
 int main()
 {
 
-    FILE *fp1;
+    FILE *fp1,*fp2;
     char str1[65];
     char str2[65];
     char lat[9];
@@ -22,6 +22,7 @@ int main()
     char height[5];
     int i;
     fp1=fopen("//Users//a20161104597//Desktop//GPS//GPS170510.log","r");
+    fp2=fopen("//Users//a20161104597//Desktop//GPS//out.xls","w");
     while(fscanf(fp1,"%s%s",str1,str2)!=EOF)
     {
         printf("结果: %s\n%s\n",str1,str2);
@@ -67,7 +68,15 @@ int main()
         printf("经度:%s\n",lon);
         printf("速率:%s\n",speed);
         printf("海拔:%s\n",height);
+        fprintf(fp2,"UTC日月年：%s\n",date);
+        fprintf(fp2,"UTC小时：%s\n",time1);
+        fprintf(fp2,"UTC分秒：%s\n",time2);
+        fprintf(fp2,"纬度:%s\n",lat);
+        fprintf(fp2,"经度:%s\n",lon);
+        fprintf(fp2,"速率:%s\n",speed);
+        fprintf(fp2,"海拔:%s\n",height);
     }
     fclose(fp1);
+    fclose(fp2);
     return 0;
 }
