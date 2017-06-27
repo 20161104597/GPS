@@ -67,14 +67,14 @@ int main()
         printf("纬度:%s\n",lat);
         printf("经度:%s\n",lon);
         printf("速率:%s\n",speed);
-        printf("海拔:%s\n",height);
-        fprintf(fp2,"UTC日月年：%s\n",date);
-        fprintf(fp2,"UTC小时：%s\n",time1);
-        fprintf(fp2,"UTC分秒：%s\n",time2);
-        fprintf(fp2,"纬度:%s\n",lat);
-        fprintf(fp2,"经度:%s\n",lon);
-        fprintf(fp2,"速率:%s\n",speed);
-        fprintf(fp2,"海拔:%s\n",height);
+        printf("海拔:%s米\n",height);
+        fprintf(fp2,"UTC日月年：%s,",date);
+        fprintf(fp2,"UTC小时：%s,",time1);
+        fprintf(fp2,"UTC分秒：%s,",time2);
+        fprintf(fp2,"纬度:%s,",lat);
+        fprintf(fp2,"经度:%s,",lon);
+        fprintf(fp2,"速率:%s,",speed);
+        fprintf(fp2,"海拔:%s米,\n",height);
     }
     fclose(fp1);
     fclose(fp2);
